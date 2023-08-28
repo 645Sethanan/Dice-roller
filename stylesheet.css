@@ -1,0 +1,10 @@
+body{
+    padding: 0px;
+    margin: 0px;
+}
+
+.dice{
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+}

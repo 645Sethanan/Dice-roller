@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Dice</title>
+    <!-- bootstrap -->
+    <link rel="stylesheet" href="./stylesheet.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="container d-flex justify-content-center">
+            <!-- display -->
+            <h1 class="display">ทอยลูกเต๋า</h1>
+            
+        </div>
+        <br>
+            <!-- dice container -->
+        <div class="container d-flex justify-content-around">
+                <img class="dice" src="./dice-pic/1.png" style="object-fit: fill;" alt="">
+                <img class="dice" src="./dice-pic/1.png" style="object-fit: fill;" alt="">
+                <img class="dice" src="./dice-pic/1.png" style="object-fit: fill;" alt="">
+        </div>
+        <br>
+        
+        <!-- button -->
+        <div class="container d-flex justify-content-center">
+            <button id="btn" class="btn btn-primary bg-gradient">ทอย</button>
+        </div>
+    </div>
+
+    <!-- script -->
+    <script>
+        let dice = document.getElementsByClassName('dice');
+        let btn = document.getElementById('btn');
+        // add event
+        btn.addEventListener('click',diceRandom);
+
+        function diceRandom(){
+            for(let i =0; i<3;i++){
+                let random = (Math.random()*6)+1;
+                dice[i].src = "./dice-pic/"+ parseInt(random) +".png";
+                dice[i].style.width = '100px';
+                console.log("./dice-pic/"+ parseInt(random) +".png");
+            }
+            
+        }
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+</body>
+</html>
